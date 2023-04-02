@@ -1,0 +1,125 @@
+<!-- Author: Richard Mascarenhas, roll no: 2237 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1 style="color:rgb(33, 48, 18);
+        font-weight: bolder;"> <big>30</big> Seconds Memory</h1>
+
+        <!-- <h2>One Minute Memory</h2> -->
+
+        <button class="open_button" id="open_button" style="margin-bottom: 0.4em;">Rules of the Game</button>
+
+        <dialog class="modal" id="modal">
+
+            <h2 style="margin: 0 auto;">Rules of the Game</h2> <br>
+
+            <p>1) You need to remember the colors given at each position and then color them using the 
+                color palette given below
+            </p>
+            <p>2) A 30 sec timer will be put on, you need to complete it before it finishes. </p>
+
+            <p>3) A total of three chances are available </p>
+
+            <button class="close_button" id="close_button">Close Instructions</button>
+
+        </dialog>
+
+    </header>
+
+
+
+    <br>
+
+    <h1 id='time' class="time">00:30 </h1>
+    <h1 id='after_time_out'>00:30 </h1>
+
+    <div class="container" id="container">
+
+        <div class="row_1">
+
+            <button class="red" id="r11"></button>
+            <button class="yellow" id="r12"></button>
+            <button class="purple" id="r13"></button>
+
+        </div>
+
+        <div class="row_2">
+
+            <button class="yellow" id="r21"></button>
+            <button class="orange" id="r22"></button>
+            <button class="red" id="r23"></button>
+
+        </div>
+
+        <div class="row_3">
+
+            <button class="lightblue" id="r31"></button>
+            <button class="red" id="r32"></button>
+            <button class="purple" id="r33"></button>
+
+        </div>
+
+
+    </div>
+
+    <br>
+
+    <div class="three_buttons" id="three_buttons">
+
+        <button id="start_button">Start</button>
+        <button id="chances_button">Changes left(3)</button>
+        <button id="submit_button">Submit</button>
+
+
+    </div>
+
+
+    <br>
+
+    <div class="box_for_colors" id="box_for_colors" style="border: 1.5px solid black;">
+
+        <h2 style="text-align: center;margin: 0 auto;background-color: aquamarine;width: 100%;padding-bottom: 0.3em;">
+            Color Pallete</h2>
+
+        <div class="color_palete">
+
+            <button style="background-color: aqua;" id="aqua"></button>
+            <button style="background-color: brown;" id="brown"></button>
+            <button style="background-color: orange;" id="orange"></button>
+            <button style="background-color: chartreuse;" id="chartreuse"></button>
+            <button style="background-color: purple;" id="purple"></button>
+            <button style="background-color: red;" id="red"></button>
+            <button style="background-color: yellow;" id="yellow"></button>
+            <button style="background-color: blue;" id="blue"></button>
+            <button style="background-color: lightblue;" id="lightblue"></button>
+            <button style="background-color: darkgreen;" id="darkgreen"></button>
+            <button style="background-color: deeppink;" id="deeppink"></button>
+            <button style="background-color: slateblue;" id="slateblue"></button>
+
+        </div>
+
+
+    </div>
+    <br>
+    <div class="retry_section" id="retry_section"></div>
+
+    <br><br><br>
+
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
