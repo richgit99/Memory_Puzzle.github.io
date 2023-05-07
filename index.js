@@ -11,9 +11,18 @@ var no = 30;
 // alert(window.innerWidth);
 var chances = 3;
 
+const retry_section = document.getElementById("retry_section");
+// const retry_button = document.createElement('button');
+// retry_button.classList.add("retry_button");
+const retry_button = document.getElementById("retry_button");
+
+retry_button.onclick = function(){
+    window.location.reload();
+    // console.log("wjbsw");
+}
+
 open_modal.addEventListener("click", function () {
 
-    
     container.style.marginTop = '3em';
     time.style.marginTop = '18em';
     modal.show();
@@ -28,7 +37,7 @@ close_modal.addEventListener("click", function () {
 
 });
 
-
+ 
 const b1 = document.getElementById('r11');
 const b2 = document.getElementById('r12');
 const b3 = document.getElementById('r13');
@@ -57,6 +66,45 @@ const darkgreen = document.getElementById("darkgreen");
 var list_of_buttons = [b1, b2, b3, b4, b5, b6, b7, b8, b9];
 var list_of_colors = [aqua, brown, red, yellow, lightblue, orange, purple, chartreuse, blue, slateblue, deeppink, darkgreen];
 
+
+// -------------------------------------------------------------------------------------------
+
+const set1_of_colors = ["aqua","brown","orange"];
+const set2_of_colors = ["chartreuse","purple","red"];
+const set3_of_colors = ["yellow","blue","deeppink"];
+const set4_of_colors = ["lightblue","darkgreen","slateblue"];
+
+
+
+const b1_color = set1_of_colors[Math.round(Math.random()* 2)];
+const b2_color = set2_of_colors[Math.round(Math.random()* 2)];
+const b3_color = set1_of_colors[Math.round(Math.random()* 2)];
+const b4_color = set3_of_colors[Math.round(Math.random()* 2)];
+const b5_color = set4_of_colors[Math.round(Math.random()* 2)];
+const b6_color = set2_of_colors[Math.round(Math.random()* 2)];
+const b7_color = set1_of_colors[Math.round(Math.random()* 2)];
+const b8_color = set3_of_colors[Math.round(Math.random()* 2)];
+const b9_color = set4_of_colors[Math.round(Math.random()* 2)];
+
+
+
+// body.style.backgroundColor = colors_displayed_onScreen[Math.round(Math.random()* 5)];
+
+
+b1.style.backgroundColor = b1_color;
+b2.style.backgroundColor = b2_color;
+b3.style.backgroundColor = b3_color;
+
+b4.style.backgroundColor = b4_color;
+b5.style.backgroundColor = b5_color;
+b6.style.backgroundColor = b6_color;
+
+b7.style.backgroundColor = b7_color;
+b8.style.backgroundColor = b8_color;
+b9.style.backgroundColor = b9_color;
+
+
+// ------------------------------------------------------------------------------------------------
 
 // Two important game buttons
 
@@ -113,9 +161,9 @@ start_button.onclick = function () {
  
 
 
-        if (b1.style.backgroundColor == 'red' && b6.style.backgroundColor == 'red' && b8.style.backgroundColor == 'red'
-            && b2.style.backgroundColor == 'yellow' && b4.style.backgroundColor == 'yellow' && b3.style.backgroundColor == 'purple'
-            && b9.style.backgroundColor == 'purple' && b5.style.backgroundColor == 'orange' && b7.style.backgroundColor == 'lightblue') {
+        if (b1.style.backgroundColor == b1_color && b6.style.backgroundColor == b6_color && b8.style.backgroundColor == b8_color
+            && b2.style.backgroundColor == b2_color && b4.style.backgroundColor == b4_color && b3.style.backgroundColor == b3_color
+            && b9.style.backgroundColor == b9_color && b5.style.backgroundColor == b5_color && b7.style.backgroundColor == b7_color) {
 
             alert("You Won");
             submit_button.remove();
@@ -125,6 +173,7 @@ start_button.onclick = function () {
             time.remove();
             after_time_out.innerText = "Game Complete";
             after_time_out.style.display = 'block';
+            retry_section.style.display = 'block';
             box_for_colors.remove();
 
             list_of_buttons.forEach((e) => {
@@ -158,6 +207,7 @@ start_button.onclick = function () {
                 chances_button.innerText = 'Chances Over, You Lost !!!';
                 time.innerText = 'Time Out';
                 after_time_out.innerText = 'Game Over';
+                retry_section.style.display = 'block';
                 after_time_out.style.display = 'block';
                 submit_button.remove();
                 box_for_colors.remove();
@@ -185,6 +235,9 @@ start_button.onclick = function () {
 
             after_time_out.innerText = `Time Over`;
             chances_button.innerText = 'You Lost';
+         
+            retry_section.append(retry_button);
+            retry_section.style.display = 'block';
             after_time_out.style.display = 'block';
             submit_button.remove();
 
